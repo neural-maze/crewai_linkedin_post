@@ -1,0 +1,9 @@
+selenium==4.19.0
+lxml==5.2.1
+beautifulsoup4==4.12.3
+python-dotenv==1.0.0
+crewai==0.28.8
+crewai-tools==0.1.7
+langchain-core==0.1.45
+langchain-openai==0.0.5
+langchain-mistralai==0.1.2
