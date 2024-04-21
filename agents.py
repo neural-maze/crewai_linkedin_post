@@ -13,8 +13,7 @@ load_dotenv()
 
 
 openai_llm = ChatOpenAI(api_key=os.environ.get("OPENAI_API_KEY"), model="gpt-3.5-turbo-0125")
-mistral_llm_small = ChatMistralAI(api_key=os.environ.get("MISTRAL_API_KEY"), model="mistral-small")
-mistral_llm_large = ChatMistralAI(api_key=os.environ.get("MISTRAL_API_KEY"), model="mistral-large-latest")
+mistral_llm = ChatMistralAI(api_key=os.environ.get("MISTRAL_API_KEY"), model="mistral-large-latest")
 
 scrape_website_tool = ScrapeWebsiteTool()
 search_tool = SerperDevTool()
@@ -59,5 +58,5 @@ doppelganger_agent = Agent(
     ),
     verbose=True,
     allow_delegation=False,
-    llm=mistral_llm_large
+    llm=mistral_llm
 )
