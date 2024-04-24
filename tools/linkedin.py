@@ -13,7 +13,7 @@ class LinkedinToolException(Exception):
         super().__init__("You need to set the LINKEDIN_EMAIL and LINKEDIN_PASSWORD env variables")
 
 
-def scrape_posts_from_linkedin_profile_fn() -> str:
+def scrape_linkedin_posts_fn() -> str:
     """
     A tool that can be used to scrape LinkedIn posts
     """
@@ -48,9 +48,9 @@ def scrape_posts_from_linkedin_profile_fn() -> str:
     return str(posts[:2])
 
 
-@tool("ScrapePostsFromLinkedinProfileTool")
-def scrape_posts_from_linkedin_profile_tool() -> str:
+@tool("ScrapeLinkedinPosts")
+def scrape_linkedin_posts_tool() -> str:
     """
     A tool that can be used to scrape LinkedIn posts
     """
-    return scrape_posts_from_linkedin_profile_fn()
+    return scrape_linkedin_posts_fn()

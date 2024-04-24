@@ -7,7 +7,7 @@ from dotenv import load_dotenv
 from langchain_mistralai import ChatMistralAI
 from langchain_openai import ChatOpenAI
 
-from tools import scrape_posts_from_linkedin_profile_tool
+from tools import scrape_linkedin_posts_tool
 
 load_dotenv()
 
@@ -21,7 +21,7 @@ search_tool = SerperDevTool()
 linkedin_scraper_agent = Agent(
     role="LinkedIn Post Scraper",
     goal="Your goal is to scrape a LinkedIn profile to get a list of posts from the given profile",
-    tools=[scrape_posts_from_linkedin_profile_tool],
+    tools=[scrape_linkedin_posts_tool],
     backstory=dedent(
         """
         You are an experienced programmer who excels at web scraping. 
@@ -34,7 +34,7 @@ linkedin_scraper_agent = Agent(
 
 web_researcher_agent = Agent(
     role="Web Researcher",
-    goal="Your goal is to search for relevant content about the differences between TPUs and GPUs",
+    goal="Your goal is to search for relevant content about the comparison between Llama 2 and Llama 3",
     tools=[scrape_website_tool, search_tool],
     backstory=dedent(
         """
@@ -48,8 +48,8 @@ web_researcher_agent = Agent(
 )
 
 doppelganger_agent = Agent(
-    role="LinkedIn Profile Doppelganger",
-    goal="You will create a LinkedIn post about the differences between TPUs and GPUs following the writing style "
+    role="LinkedIn Post Creator",
+    goal="You will create a LinkedIn post comparing Llama 2 and Llama 3 following the writing style "
          "observed in the LinkedIn posts scraped by the LinkedIn Post Scraper.",
     backstory=dedent(
         """

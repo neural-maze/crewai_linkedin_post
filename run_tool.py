@@ -1,3 +1,3 @@
-from tools import scrape_posts_from_linkedin_profile_fn
+from tools import scrape_linkedin_posts_fn
 
-print(scrape_posts_from_linkedin_profile_fn())
+print(scrape_linkedin_posts_fn())
