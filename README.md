@@ -41,7 +41,7 @@ LinkedIn post emulating my writing style.
 First of all, install the necessary dependencies.
 
 ```shell
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 After all the dependencies are installed, run the `main.py`.
